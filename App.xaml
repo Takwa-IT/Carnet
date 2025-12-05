@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:carnet.Converters"
+             x:Class="carnet.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <converters:BoolToColorConverter x:Key="BoolToColor" />
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:StringToBoolConverter x:Key="StringToBoolConverter" />
+
+            <Color x:Key="Primary">#6200EE</Color>
+            <Color x:Key="Secondary">#03DAC6</Color>
+            <Color x:Key="Accent">#FF4081</Color>
+            <Color x:Key="Error">#F44338</Color>
+
+            <Color x:Key="PageBackgroundColorLight">White</Color>
+            <Color x:Key="PageBackgroundColorDark">#121212</Color>
+
+            <Color x:Key="TextColorLight">#212121</Color>
+            <Color x:Key="TextColorDark">#E0E0E0</Color>
+
+            <Color x:Key="CardBackgroundLight">White</Color>
+            <Color x:Key="CardBackgroundDark">#1E1E1E</Color>
+
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" 
+                        Value="{AppThemeBinding Light={StaticResource PageBackgroundColorLight}, 
+                                               Dark={StaticResource PageBackgroundColorDark}}" />
+            </Style>
+
+            <Style TargetType="Label" ApplyToDerivedTypes="True">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource TextColorLight}, 
+                                               Dark={StaticResource TextColorDark}}" />
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource TextColorLight}, 
+                                               Dark={StaticResource TextColorDark}}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" 
+                        Value="{AppThemeBinding Light={StaticResource TextColorLight}, 
+                                               Dark={StaticResource TextColorDark}}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
